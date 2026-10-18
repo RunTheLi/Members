@@ -5,6 +5,8 @@ const authRouter = require("./routes/authRouter");
 const indexRouter = require("./routes/indexRouter");
 const session = require("express-session");
 const passport = require("./config/passport");
+const messageRouter = require("./routes/messageRouter");
+
 
 const express = require("express");
 const path = require("node:path");
@@ -32,6 +34,7 @@ app.use(passport.session());
 
 app.use("/", indexRouter);
 app.use("/", authRouter);
+app.use("/", messageRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

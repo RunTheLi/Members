@@ -1,7 +1,7 @@
 //controllers/authControllwe.js
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const { createUser } = require("../db/queries");
+const { createUser, joinClub } = require("../db/queries");
 
 function getSignUp(req, res) {
   res.render("sign-up", { errors: [] });
@@ -76,9 +76,33 @@ function getLogIn(req, res) {
   });
 }
 
+function getJoinClub(req, res) {
+  res.render("join-club", { error: null });
+}
+
+async function postJoinClub(req, res) {
+  const { passcode } = req.body;
+
+
+  if (passcode !== process.env.CLUB_PASSCODE) {
+    return res.status(400).render("join-club", {
+      error: "Incorrect secret passcode. Please try again.",
+    });
+  }
+
+  try {
+    await joinClub(req.user.id);
+    res.redirect("/");
+  } catch (error) {
+    next (error);
+  }
+}
+
 module.exports = {
   getSignUp,
   validateSignUp,
   postSignUp,
   getLogIn,
+  getJoinClub,
+  postJoinClub
 };

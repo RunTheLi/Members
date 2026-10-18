@@ -69,9 +69,39 @@ async function getUserById(id) {
   return rows[0];
 }
 
+async function createMessage({ title, text, userId }) {
+  const { rows } = await pool.query(
+    `INSERT INTO messages (title, text, user_id)
+     VALUES ($1, $2, $3)
+     RETURNING id, title, text, timestamp, user_id`,
+     [title, text, userId]
+  );
+  return rows[0];
+}
+
+async function joinClub(userId) {
+  const { rows } = await pool.query(
+    `UPDATE users
+    SET membership_status = TRUE
+    WHERE id = $1
+    RETURNING id, username, membership_status`, [userId]
+  );
+  return rows[0];
+}
+
+async function deleteMessage(messageId) {
+  await pool.query(
+    "DELETE FROM messages WHERE id = $1",
+    [messageId]
+  );
+}
+
 module.exports = {
   getAllMessages,
   createUser,
   getUserByUsername,
   getUserById,
+  createMessage,
+  joinClub,
+  deleteMessage
 };

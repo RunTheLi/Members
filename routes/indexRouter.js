@@ -10,7 +10,10 @@ indexRouter.get("/", async (req, res, next) => {
 
     console.log("Logged-in user:", req.user);
     
-    res.render("index", { messages });
+    res.render("index", {
+      messages,
+      user: req.user,
+    });
   } catch (err) {
     next(err);
   }
