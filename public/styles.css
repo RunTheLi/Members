@@ -1,0 +1,366 @@
+
+/* public/styles.css */
+
+/* 1. Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f5f9;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* 2. Main page */
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* 3. Main heading */
+h1 {
+  color: #243b64;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: #243b64;
+}
+
+/* 4. Links */
+a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 5. Buttons */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background-color: #243b64;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #365486;
+}
+
+/* 6. Message cards */
+article {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgb(15 23 42 / 4%);
+}
+
+article p {
+  color: #475569;
+  overflow-wrap: anywhere;
+}
+
+article p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* 7. Forms */
+form {
+  margin-top: 12px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: white;
+  font: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+/* 8. Delete button */
+article button {
+  background-color: #dc2626;
+}
+
+article button:hover {
+  background-color: #b91c1c;
+}
+
+/* 9. Mobile layout */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 16px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  article {
+    padding: 18px;
+  }
+}
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.brand {
+  color: #243b64;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-links form,
+.message-footer form {
+  margin: 0;
+}
+
+/* Shared buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #243b64;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #365486;
+  text-decoration: none;
+}
+
+.button-outline {
+  background: white;
+  color: #243b64;
+  border-color: #cbd5e1;
+}
+
+.button-outline:hover {
+  background: #f1f5f9;
+  color: #243b64;
+}
+
+.button-light {
+  background: white;
+  color: #243b64;
+}
+
+.button-light:hover {
+  background: #eaf0fa;
+  color: #243b64;
+}
+
+.button-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 8px 12px;
+}
+
+.button-danger:hover {
+  background: #fecaca;
+}
+
+/* Welcome banner */
+.hero {
+  padding: 36px;
+  border-radius: 18px;
+  background: #243b64;
+  color: white;
+}
+
+.hero .eyebrow {
+  margin: 0 0 10px;
+  color: #c7d8f4;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  color: white;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.hero-description {
+  margin: 0 0 24px;
+  color: #e2e8f0;
+}
+
+/* Messages section */
+.messages-section {
+  margin-top: 36px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-heading p {
+  margin: 4px 0 0;
+  color: #64748b;
+}
+
+.message-count,
+.post-label {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.message-card {
+  margin-bottom: 18px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 3px 10px rgb(15 23 42 / 4%);
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.message-meta h3 {
+  margin: 0;
+}
+
+.message-meta .author {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.message-text {
+  margin: 22px 0;
+  color: #475569;
+  overflow-wrap: anywhere;
+}
+
+.message-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.empty-state {
+  padding: 36px 24px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 14px;
+  text-align: center;
+  background: white;
+}
+
+.empty-state h3 {
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  margin-bottom: 0;
+  color: #64748b;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 26px 22px;
+  }
+
+  .message-card {
+    padding: 18px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+}

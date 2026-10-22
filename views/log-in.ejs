@@ -1,37 +1,64 @@
 <!--log-in.ejs-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Log In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | Members Only</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>Log In</h1>
-
-  <form action="/log-in" method="POST">
-    <div>
-      <label for="username">Username</label>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        required
-      >
+  <nav class="navbar">
+    <a class="brand" href="/">Members Only</a>
+    <div class="nav-links">
+      <a href="/sign-up" class="button">Sign Up</a>
     </div>
+  </nav>
 
-    <div>
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        required
-      >
-    </div>
+  <main class="auth-container">
+    <section class="auth-card">
+      <h3><p class="eyebrow">WELCOME BACK</p></h3>
+      <h1>Log in to your account</h1>
+      <p class="auth-description">
+        Sign in to join the conversation in our community.
+      </p>
 
-    <button type="submit">Log In</button>
-  </form>
+      <form action="/log-in" method="POST" class="auth-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            autocomplete="username"
+            required
+          >
+        </div>
 
-  <p>Don't have an account? <a href="/sign-up">Sign up</a></p>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+        <br>
+        <button type="submit" class="button login-button">
+          Log In
+        </button>
+      </form>
+
+      <p class="auth-footer">
+        Don't have an account?
+        <a href="/sign-up">Sign up</a>
+      </p>
+    </section>
+  </main>
 </body>
 </html>
